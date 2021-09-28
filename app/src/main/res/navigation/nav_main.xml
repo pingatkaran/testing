@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_main"
+    app:startDestination="@id/eventsListFragment">
+
+
+    <fragment
+        android:id="@+id/splashFragment"
+        android:name="com.app.techalchemy.ui.fragments.SplashFragment"
+        android:label="SplashFragment">
+        <action
+            android:id="@+id/action_splashFragment_to_eventsListFragment"
+            app:destination="@id/eventsListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/eventsListFragment"
+        android:name="com.app.techalchemy.ui.fragments.EventsListFragment"
+        android:label="EventsListFragment">
+        <action
+            android:id="@+id/action_eventsListFragment_to_eventDetailsFragment"
+            app:destination="@id/eventDetailsFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/eventDetailsFragment"
+        android:name="com.app.techalchemy.ui.fragments.EventDetailsFragment"
+        android:label="EventDetailsFragment">
+
+        <argument
+            android:name="eventDetails"
+            android:defaultValue="@null"
+            app:argType="com.app.techalchemy.model.EventDetails"
+            app:nullable="true" />
+
+    </fragment>
+</navigation>
